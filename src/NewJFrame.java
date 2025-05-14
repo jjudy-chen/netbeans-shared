@@ -14,6 +14,7 @@ public class NewJFrame extends javax.swing.JFrame {
      */
     public NewJFrame() {
         initComponents();
+        
     }
 
     /**
@@ -64,8 +65,9 @@ public class NewJFrame extends javax.swing.JFrame {
         jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
-        jTextArea1.setText("1) New York Declares State of Emergency After Severe Storms Cause Flooding,\n2) Canada's Unemployment Rate Falls to 5.2% in April,\n3) This One Simple Trick Will Make You Live to 200 Years—Doctors Are Amazed!,\n4) What They’re Not Telling You About Tap Water in Your City,\n5) Parents Outraged Over School’s ‘Woke’ Curriculum Shift,\n6) Controversial Figure Sparks Chaos at University Talk,\n7) Ministry of Health Reports Increase in Flu Cases This Season,\n8) New Playground Opens in Downtown Neighborhood Park,\n9) Scientists Discover Fungus That Breaks Down Plastic in Weeks,\n10) Why the Government’s New Plan Might Ruin Your Summer\n");
+        jTextArea1.setText("Click next to start\n");
         jTextArea1.setFocusCycleRoot(true);
         jTextArea1.setFocusable(false);
         jScrollPane1.setViewportView(jTextArea1);
@@ -171,11 +173,10 @@ public class NewJFrame extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
-
+private int next = 0;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         //EASY LEVEL!!!!!!------------------------------
-        int next = 0;
         switch (next){
             case 0:
                 jTextArea1.setText("In the news(or any media), there will be all sorts of titles trying to grab your attention! So it's important identify which headlines are purely based in facts and which are trying to trigger an emotional response/bias!");
@@ -194,6 +195,8 @@ public class NewJFrame extends javax.swing.JFrame {
                         + "10) Why the Government’s New Plan Might Ruin Your Summer");
                 break;
 }
+        String userAnswer = jTextField1.getText();
+        if(userAnswer.equals(""))
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
