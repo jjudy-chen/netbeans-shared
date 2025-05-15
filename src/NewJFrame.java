@@ -79,7 +79,6 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.setText("...");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -98,9 +97,9 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 34, Short.MAX_VALUE))
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 536, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 37, Short.MAX_VALUE))
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,6 +176,7 @@ private int next = 0;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         //EASY LEVEL!!!!!!------------------------------
+        String answers = "3, 4, 5, 6, 10";
         switch (next){
             case 0:
                 jTextArea1.setText("In the news(or any media), there will be all sorts of titles trying to grab your attention! So it's important identify which headlines are purely based in facts and which are trying to trigger an emotional response/bias!");
@@ -193,10 +193,22 @@ private int next = 0;
                         + "8) New Playground Opens in Downtown Neighborhood Park,\n"
                         + "9) Scientists Discover Fungus That Breaks Down Plastic in Weeks,\n"
                         + "10) Why the Government’s New Plan Might Ruin Your Summer");
+                next = 2;
                 break;
-}
-        String userAnswer = jTextField1.getText();
-        if(userAnswer.equals(""))
+            case 2:
+                String userAnswer = jTextField1.getText();
+                if(userAnswer.equals(answers)){
+                    jTextArea1.setText("Nice job, you got it! \n Click next");
+                    next = 3;//move on
+                }else{
+                    jTextArea1.setText("Try again :( ");
+                    next = 1;//go back
+                }
+                break;
+            case 3:
+                jTextArea1.setText("Although many of the titles are biased, most of them(and most articles in general) are made to convince their readers,, which isn't necessarily always a bad thing. Its better to be aware that you're being influenced by a piece of media and to make educated choices on what you let influence your world view! \n \n You may proceed to the next level");
+                break;
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
