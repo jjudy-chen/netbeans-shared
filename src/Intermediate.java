@@ -24,8 +24,7 @@ public class Intermediate extends Level{
     public boolean checkAnswer(String answer){
         for (String fake : fakeFacts){
             if (fake.equalsIgnoreCase(answer)){
-                score ++;
-                setScore(score);
+                setScore(getScore() + 1);
                 return true;
             }
         }
