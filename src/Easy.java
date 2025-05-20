@@ -7,24 +7,47 @@
  *
  * @author lilya
  */
-public class Easy {
+import java.util.Arrays;
+
+public class Easy extends Level{
     private String answers;
     private String userAnswers;
-    private String titles;
     
-    public Easy(String answers, String userAnswers, String titles){
-        this.answers = answers;
+    public Easy(String answers, String userAnswers){
+        super(answers);
         this.userAnswers = userAnswers;
-        this.titles = titles;
     }
     
+    public String getAnswers(){
+        return answers;}
     
-    public boolean checkAnswers(){
-        boolean passed = false;
-        if(userAnswers.equals(answers)){
-            passed = true;
-        }
-        return passed;
+    public String getUserAnswers(){
+        return userAnswers;
     }
+public boolean checkAnswers(){
+    if (userAnswers != null){
+        
+    
+    String[] correct = answers.split(",");
+    String[] user = userAnswers.split(",");
+
+    if (correct.length != user.length)
+        return false;
+
+    // Clean up each answer
+    for (int i = 0; i < correct.length; i++) {
+        correct[i] = correct[i].trim();
+        user[i] = user[i].trim();
+    }
+
+    Arrays.sort(correct);
+    Arrays.sort(user);
+
+    return Arrays.equals(correct, user);
+    }else{
+        return false;
+    }
+}
+
     
 }
