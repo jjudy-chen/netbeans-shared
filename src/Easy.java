@@ -15,6 +15,7 @@ public class Easy extends Level{
     
     public Easy(String answers, String userAnswers){
         super(answers);
+        this.answers = answers;
         this.userAnswers = userAnswers;
     }
     
@@ -24,26 +25,25 @@ public class Easy extends Level{
     public String getUserAnswers(){
         return userAnswers;
     }
+    
 public boolean checkAnswers(){
     if (userAnswers != null){
-        
-    
-    String[] correct = answers.split(",");
-    String[] user = userAnswers.split(",");
+        String[] correct = answers.split(",");
+        String[] user = userAnswers.split(",");
 
-    if (correct.length != user.length)
-        return false;
+        if (correct.length != user.length)
+            return false;
 
-    // Clean up each answer
-    for (int i = 0; i < correct.length; i++) {
-        correct[i] = correct[i].trim();
-        user[i] = user[i].trim();
-    }
+        // Clean up each answer
+        for (int i = 0; i < correct.length; i++) {
+            correct[i] = correct[i].trim();
+            user[i] = user[i].trim();
+        }
 
-    Arrays.sort(correct);
-    Arrays.sort(user);
+        Arrays.sort(correct);
+        Arrays.sort(user);
 
-    return Arrays.equals(correct, user);
+        return Arrays.equals(correct, user);
     }else{
         return false;
     }
