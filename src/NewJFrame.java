@@ -86,7 +86,7 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setText("Level 1!");
+        jLabel1.setText("Level 1");
 
         jLabel2.setText("Select all headlines which you think are trying to sway you!(answer format: 1, 5, 7, 3...)");
 
@@ -176,7 +176,7 @@ private int next = 0;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         //EASY LEVEL!!!!!!------------------------------
-        String answers = "3, 4, 5, 6, 10";
+        
         switch (next){
             case 0:
                 jTextArea1.setText("In the news(or any media), there will be all sorts of titles trying to grab your attention! So it's important identify which headlines are purely based in facts and which are trying to trigger an emotional response/bias!");
@@ -196,12 +196,13 @@ private int next = 0;
                 next = 2;
                 break;
             case 2:
-                String userAnswer = jTextField1.getText();
-                if(userAnswer.equals(answers)){
+                String userAnswer = jTextField1.getText().trim();
+                Easy levelOne = new Easy("3, 4, 5, 6, 10", userAnswer);
+                if(levelOne.checkAnswers() == true){
                     jTextArea1.setText("Nice job, you got it! \n Click next");
                     next = 3;//move on
                 }else{
-                    jTextArea1.setText("Try again :( ");
+                    jTextArea1.setText("Try again :( \n"+ levelOne.getUserAnswers());
                     next = 1;//go back
                 }
                 break;
