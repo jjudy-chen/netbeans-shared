@@ -315,7 +315,9 @@ private int next = 0;
     
     //method to load all the true and fake facts to the checkboxes
     public void factsCheckbox(){
+        //gets the facts from the intermediate level class
         String [] facts = intermediateLevel.getFacts();
+        //each checkbox is assigned a different array and its randomized to mix the real and fake facts
         jCheckBox1.setText(facts[0]);
         jCheckBox2.setText(facts[3]);
         jCheckBox3.setText(facts[6]);
@@ -330,7 +332,7 @@ private int next = 0;
     }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        //unselct all textbox to restart the test
+        //unselect all textbox to restart the test
         jCheckBox1.setSelected(false);
         jCheckBox2.setSelected(false);
         jCheckBox3.setSelected(false);
@@ -345,11 +347,13 @@ private int next = 0;
         //clears score message
         jTextField2.setText("");
         
+        //calls the intermediate level resetScore method to reset the score back to 0
         intermediateLevel.resetScore();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        //when a checkbox is selected, it calls the checkAnswers method from the intermediate class to see if it's correct or not
         if (jCheckBox1.isSelected()) intermediateLevel.checkAnswers(jCheckBox1.getText());
         if (jCheckBox2.isSelected()) intermediateLevel.checkAnswers(jCheckBox2.getText());
         if (jCheckBox3.isSelected()) intermediateLevel.checkAnswers(jCheckBox3.getText());
@@ -361,6 +365,7 @@ private int next = 0;
         if (jCheckBox9.isSelected()) intermediateLevel.checkAnswers(jCheckBox9.getText());
         if (jCheckBox10.isSelected()) intermediateLevel.checkAnswers(jCheckBox10.getText());
         
+        //gathers score and displays user's score in the textfield
         jTextField2.setText(intermediateLevel.displayScore());
     }//GEN-LAST:event_jButton3ActionPerformed
 
