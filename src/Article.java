@@ -73,6 +73,5 @@ public class Article {
             System.out.print("Error found: " + e);
         }
     return articleList.toArray(new Article[0]);
-    
-}
+    }
 }
