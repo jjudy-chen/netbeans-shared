@@ -10,6 +10,8 @@
 public class NewJFrame extends javax.swing.JFrame {
     //gets code from the intermediate level    
     Intermediate intermediateLevel = new Intermediate();
+    //gets code from the difficult level    
+
     
     /**
      * Creates new form NewJFrame
@@ -55,7 +57,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jCheckBox10 = new javax.swing.JCheckBox();
         jTextField2 = new javax.swing.JTextField();
         jPanel8 = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
+        submitAnswers = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
@@ -251,7 +253,12 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jTabbedPane3.addTab("Intermediate", jPanel7);
 
-        jButton4.setText("Submit Answer");
+        submitAnswers.setText("Submit Answer");
+        submitAnswers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                submitAnswersActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Identify The Fake Task:");
 
@@ -262,8 +269,18 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         jButton5.setText("Reset");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jCheckBox11.setText("jCheckBox11");
+        jCheckBox11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox11ActionPerformed(evt);
+            }
+        });
 
         jCheckBox12.setText("jCheckBox12");
 
@@ -284,7 +301,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jCheckBox16)
                     .addComponent(jCheckBox15)
-                    .addComponent(jButton4)
+                    .addComponent(submitAnswers)
                     .addComponent(jCheckBox13)
                     .addComponent(jCheckBox12)
                     .addComponent(jCheckBox11)
@@ -312,7 +329,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jCheckBox16)
                 .addGap(8, 8, 8)
-                .addComponent(jButton4)
+                .addComponent(submitAnswers)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -446,6 +463,37 @@ private int next = 0;
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
 
+    private void jCheckBox11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox11ActionPerformed
+    
+    private void submitAnswersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitAnswersActionPerformed
+        // TODO add your handling code here:
+        boolean allCorrect = true;
+        if (jCheckBox11.isSelected() && !difficultLevel.checkAnswer(jCheckBox11.getText())) allCorrect = false;
+        if (jCheckBox12.isSelected() && !difficultLevel.checkAnswer(jCheckBox12.getText())) allCorrect = false;
+        if (jCheckBox13.isSelected() && !difficultLevel.checkAnswer(jCheckBox13.getText())) allCorrect = false;
+        if (jCheckBox14.isSelected() && !difficultLevel.checkAnswer(jCheckBox14.getText())) allCorrect = false;
+        if (jCheckBox15.isSelected() && !difficultLevel.checkAnswer(jCheckBox15.getText())) allCorrect = false;
+        if (jCheckBox16.isSelected() && !difficultLevel.checkAnswer(jCheckBox16.getText())) allCorrect = false;
+        
+        if (allCorrect) {
+            
+        }
+    }//GEN-LAST:event_submitAnswersActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        // RESET BUTTON FOR DIFFICULT LEVEL
+        jCheckBox11.setSelected(false);
+        jCheckBox12.setSelected(false);
+        jCheckBox13.setSelected(false);
+        jCheckBox14.setSelected(false);
+        jCheckBox15.setSelected(false);
+        jCheckBox16.setSelected(false);
+        jTextField5.setText("");
+    }//GEN-LAST:event_jButton5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -485,7 +533,6 @@ private int next = 0;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox10;
@@ -519,5 +566,6 @@ private int next = 0;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField5;
+    private javax.swing.JButton submitAnswers;
     // End of variables declaration//GEN-END:variables
 }
