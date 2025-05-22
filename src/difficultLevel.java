@@ -24,11 +24,11 @@ public class difficultLevel extends Level {
     }
         
     public String displayFacts () {        
-        return "Real Facts: " + Arrays.toString(facts);
+        return Arrays.toString(facts);
     }
     
     public String displayTask (String task) {
-        return "Task: " + task;
+        return task;
     }
     
     public boolean checkAnswer (String ans) {
@@ -41,7 +41,7 @@ public class difficultLevel extends Level {
     }
     
     public String displayTitle() {
-        return "Titles: " + Arrays.toString(title);
+        return Arrays.toString(title);
     } 
     
     public String displayArticle(String articleTitle) {
