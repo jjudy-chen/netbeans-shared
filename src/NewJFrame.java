@@ -10,8 +10,9 @@
 public class NewJFrame extends javax.swing.JFrame {
     //gets code from the intermediate level    
     Intermediate intermediateLevel = new Intermediate();
-    //gets code from the difficult level    
 
+    // store the articles
+    private Article[] articles;
     
     /**
      * Creates new form NewJFrame
@@ -61,12 +62,12 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
-        jCheckBox11 = new javax.swing.JCheckBox();
-        jCheckBox12 = new javax.swing.JCheckBox();
-        jCheckBox13 = new javax.swing.JCheckBox();
-        jCheckBox14 = new javax.swing.JCheckBox();
-        jCheckBox15 = new javax.swing.JCheckBox();
-        jCheckBox16 = new javax.swing.JCheckBox();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField6 = new javax.swing.JTextField();
+        jCheckBox17 = new javax.swing.JCheckBox();
+        jCheckBox18 = new javax.swing.JCheckBox();
+        jCheckBox19 = new javax.swing.JCheckBox();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -260,7 +261,7 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Identify The Fake Task:");
+        jLabel3.setText("Identify The Fake Articles:");
 
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -275,22 +276,27 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
-        jCheckBox11.setText("jCheckBox11");
-        jCheckBox11.addActionListener(new java.awt.event.ActionListener() {
+        jTextField3.setText("jTextField3");
+
+        jTextField4.setText("jTextField4");
+
+        jTextField6.setText("jTextField6");
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox11ActionPerformed(evt);
+                jTextField6ActionPerformed(evt);
             }
         });
 
-        jCheckBox12.setText("jCheckBox12");
+        jCheckBox17.setText("jCheckBox17");
+        jCheckBox17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox17ActionPerformed(evt);
+            }
+        });
 
-        jCheckBox13.setText("jCheckBox13");
+        jCheckBox18.setText("jCheckBox18");
 
-        jCheckBox14.setText("jCheckBox14");
-
-        jCheckBox15.setText("jCheckBox15");
-
-        jCheckBox16.setText("jCheckBox16");
+        jCheckBox19.setText("jCheckBox19");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -298,43 +304,43 @@ public class NewJFrame extends javax.swing.JFrame {
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox16)
-                    .addComponent(jCheckBox15)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jCheckBox19)
+                    .addComponent(jCheckBox17)
+                    .addComponent(jCheckBox18)
                     .addComponent(submitAnswers)
-                    .addComponent(jCheckBox13)
-                    .addComponent(jCheckBox12)
-                    .addComponent(jCheckBox11)
                     .addComponent(jButton5)
                     .addComponent(jLabel3)
-                    .addComponent(jCheckBox14)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 513, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE)
+                    .addComponent(jTextField3)
+                    .addComponent(jTextField4)
+                    .addComponent(jTextField6))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addGap(22, 22, 22)
                 .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jCheckBox17)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox14)
+                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jCheckBox18)
+                .addGap(3, 3, 3)
+                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
+                .addComponent(jCheckBox19)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jCheckBox15)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox16)
-                .addGap(8, 8, 8)
+                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(submitAnswers)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton5)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         jTabbedPane3.addTab("Difficult", jPanel8);
@@ -462,27 +468,63 @@ private int next = 0;
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
-
-    private void jCheckBox11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox11ActionPerformed
+    
+    // load articles and set them to checkboxes and textfield
+    private void loadArticles() {
+        articles = Article.readArticlesFromFile("articles.txt");
+        
+        jCheckBox17.setText(articles[0].getTitle());
+        jTextField3.setText(articles[0].getContent());
+        
+        jCheckBox18.setText(articles[1].getTitle());
+        jTextField4.setText(articles[1].getContent());
+        
+        jCheckBox19.setText(articles[2].getTitle());
+        jTextField6.setText(articles[2].getContent());
+    }
     
     private void submitAnswersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitAnswersActionPerformed
         // TODO add your handling code here:
-
+        //check if user correctly identified the fake articles
+        boolean isCorrect = true;        
+        
+        // check if user's selection matches the fake articles (answers)
+        if (jCheckBox17.isSelected() != articles[0].getIsFake()) {
+            isCorrect = false;
+        }
+        
+        if (jCheckBox18.isSelected() != articles[1].getIsFake()) {
+            isCorrect = false;
+        }
+        
+        if (jCheckBox19.isSelected() != articles[1].getIsFake()) {
+            isCorrect = false;
+        }
+        
+        // show user the feedback
+        if (isCorrect) {
+            jTextField5.setText("Correct!");
+        } else {
+            jTextField5.setText("Incorrect!");            
+        }
     }//GEN-LAST:event_submitAnswersActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         // RESET BUTTON FOR DIFFICULT LEVEL
-        jCheckBox11.setSelected(false);
-        jCheckBox12.setSelected(false);
-        jCheckBox13.setSelected(false);
-        jCheckBox14.setSelected(false);
-        jCheckBox15.setSelected(false);
-        jCheckBox16.setSelected(false);
+        jCheckBox17.setSelected(false);
+        jCheckBox18.setSelected(false);
+        jCheckBox19.setSelected(false);
         jTextField5.setText("");
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jCheckBox17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox17ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox17ActionPerformed
+
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -526,12 +568,9 @@ private int next = 0;
     private javax.swing.JButton jButton5;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox10;
-    private javax.swing.JCheckBox jCheckBox11;
-    private javax.swing.JCheckBox jCheckBox12;
-    private javax.swing.JCheckBox jCheckBox13;
-    private javax.swing.JCheckBox jCheckBox14;
-    private javax.swing.JCheckBox jCheckBox15;
-    private javax.swing.JCheckBox jCheckBox16;
+    private javax.swing.JCheckBox jCheckBox17;
+    private javax.swing.JCheckBox jCheckBox18;
+    private javax.swing.JCheckBox jCheckBox19;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JCheckBox jCheckBox4;
@@ -555,7 +594,10 @@ private int next = 0;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     private javax.swing.JButton submitAnswers;
     // End of variables declaration//GEN-END:variables
 }
