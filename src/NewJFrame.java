@@ -384,7 +384,7 @@ private int next = 0;
             case 2:
                 String userAnswer = jTextField1.getText().trim();
                 Easy levelOne = new Easy("3, 4, 5, 6, 10", userAnswer);
-                if(levelOne.checkAnswers() == true){
+                if(levelOne.checkAnswer("3, 4, 5, 6, 10", 0) == true){
                     jTextArea1.setText("Nice job, you got it! \n Click next");
                     next = 3;//move on
                 }else{

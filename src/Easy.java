@@ -26,7 +26,10 @@ public class Easy extends Level{
         return userAnswers;
     }
     
-public boolean checkAnswers(){
+    @Override
+public boolean checkAnswer(String userAns, int score){
+    userAns = userAnswers;
+    score = 0;//unused
     if (userAnswers != null){
         String[] correct = answers.split(",");
         String[] user = userAnswers.split(",");

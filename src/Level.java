@@ -12,9 +12,9 @@ public class Level {
     private static int highestScore = 0;
     private String answers;
     
-        public Level(String answers){//constructor 1
-        this.score = 0;
-        this.answers = answers;
+    public Level(String answers){//constructor 1
+    this.score = 0;
+    this.answers = answers;
     }
         
     public Level(){//consctructor 2
