@@ -469,17 +469,7 @@ private int next = 0;
     
     private void submitAnswersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitAnswersActionPerformed
         // TODO add your handling code here:
-        boolean allCorrect = true;
-        if (jCheckBox11.isSelected() && !difficultLevel.checkAnswer(jCheckBox11.getText())) allCorrect = false;
-        if (jCheckBox12.isSelected() && !difficultLevel.checkAnswer(jCheckBox12.getText())) allCorrect = false;
-        if (jCheckBox13.isSelected() && !difficultLevel.checkAnswer(jCheckBox13.getText())) allCorrect = false;
-        if (jCheckBox14.isSelected() && !difficultLevel.checkAnswer(jCheckBox14.getText())) allCorrect = false;
-        if (jCheckBox15.isSelected() && !difficultLevel.checkAnswer(jCheckBox15.getText())) allCorrect = false;
-        if (jCheckBox16.isSelected() && !difficultLevel.checkAnswer(jCheckBox16.getText())) allCorrect = false;
-        
-        if (allCorrect) {
-            
-        }
+
     }//GEN-LAST:event_submitAnswersActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
