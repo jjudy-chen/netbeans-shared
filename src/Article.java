@@ -16,10 +16,18 @@ import java.util.Scanner;
  */
 public class Article {
     private String title;
+    private String author;
     private String content;
     private boolean isFake;
     
-    public Article (String title, String content, boolean isFake){
+    public Article (String title, String author, String content, boolean isFake){//without author
+        this.author = author;
+        this.title = title;
+        this.content = content;
+        this.isFake = isFake;
+    }
+        
+    public Article (String title, String content, boolean isFake){//without author
         this.title = title;
         this.content = content;
         this.isFake = isFake;
@@ -29,6 +37,9 @@ public class Article {
         return title;
     }
     
+    public String getAuthor(){
+        return author;
+    }
     public String getContent(){
         return content;
     }
@@ -39,6 +50,10 @@ public class Article {
     
     public void setTitle(String title){
         this.title = title;
+    }
+    
+    public void setAuthor(String author){
+        this.author = author;
     }
     
     public void setContent (String content){
@@ -61,10 +76,10 @@ public class Article {
                 if(parts.length ==4){
                     String title = parts[0].trim();
                     String author = parts[1].trim();
-                    String content = parts[2].trim();//this is unused...
+                    String content = parts[2].trim();
                     boolean isTrue = Boolean.parseBoolean(parts[3].trim());
                     
-                    Article article = new Article(title, author, isTrue);
+                    Article article = new Article(title, author, content, isTrue);
                     articleList.add(article);
                 }
             }
