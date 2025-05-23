@@ -17,6 +17,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
     // store the articles
     private Article[] articles;
+    private difficultLevel level;
     
     /**
      * Creates new form NewJFrame
