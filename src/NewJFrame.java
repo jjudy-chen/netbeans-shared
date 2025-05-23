@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -475,16 +479,55 @@ private int next = 0;
     
     // load articles and set them to checkboxes and textfield
     private void loadArticles() {
-        articles = Article.readArticlesFromFile("articles.txt");
+        try {
+            File articlesFile = new File("articles.txt");// file to be read from
+            
+            Scanner scanner = new Scanner(articlesFile); // initalizes scanner to read from file
+            
+            ArrayList<Article> articleList = new ArrayList<Article>(); // creating a list to store the articles
+            
+            // loop that keeps going until there are no more lines to read from the articles.txt file
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                
+                String[] parts = line.split("_"); // splits the line into title, author, content, isFake
+                
+                if (parts.length == 4) {  // make sure the line contains exactly 4 parts (title, author, content, and isFake)
+                    String title = parts[0].trim(); // aritcle's title
+                    String author = parts[1].trim(); // aritcle's author
+                    String content = parts[2].trim(); // aritcle's content
+                    boolean isFake = Boolean.parseBoolean(parts[3].trim()); // whether the article is fake
+                    
+                    
+                    // add a new aritcle object to the list
+                    Article article = new Article(title, author, content, isFake);
+                    
+                    articleList.add(article);
+                }
+            }
+            scanner.close(); // close scanner 
+            
+            // convert the list to an array
+            articles = articleList.toArray(new Article[0]);
         
-        jCheckBox17.setText(articles[0].getTitle());
-        jTextField3.setText(articles[0].getContent());
+            if (articles.length > 0) {
+            jCheckBox17.setText(articles[0].getTitle()); // set title to checkbox
+            jTextField3.setText(articles[0].getContent()); // set content to the text field
+            }
         
-        jCheckBox18.setText(articles[1].getTitle());
-        jTextField4.setText(articles[1].getContent());
+            if (articles.length > 1) {
+            jCheckBox18.setText(articles[1].getTitle()); // set title to checkbox
+            jTextField4.setText(articles[1].getContent()); // set content to the text field
+            }
+            
+            if (articles.length > 2) {
+            jCheckBox19.setText(articles[2].getTitle()); // set title to checkbox
+            jTextField6.setText(articles[2].getContent()); // set content to the text field
+            }
         
-        jCheckBox19.setText(articles[2].getTitle());
-        jTextField6.setText(articles[2].getContent());
+        } catch (IOException e) {
+            System.out.println("Error");
+        }
     }
     
     private void submitAnswersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitAnswersActionPerformed
