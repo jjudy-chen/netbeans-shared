@@ -20,14 +20,16 @@ public class Article {
     private String content;
     private boolean isFake;
     
-    public Article (String title, String author, String content, boolean isFake){//without author
+    //without author
+    public Article (String title, String author, String content, boolean isFake){
         this.author = author;
         this.title = title;
         this.content = content;
         this.isFake = isFake;
     }
-        
-    public Article (String title, String content, boolean isFake){//without author
+     
+    //without author
+    public Article (String title, String content, boolean isFake){
         this.title = title;
         this.content = content;
         this.isFake = isFake;
