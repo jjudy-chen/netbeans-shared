@@ -697,17 +697,19 @@ private int next = 0;
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        // get user's input
         String title = jTextField7.getText().trim();
         String author = jTextField8.getText().trim();
         String content = jTextField9.getText().trim();
         boolean isFake = jCheckBox11.isSelected();
         
+        // make sure the inputs are valid
         if (title.isEmpty() || author.isEmpty() || content.isEmpty()) {
             jTextField5.setText("Please fill in all fields.");
             return;
         }
         
-        addArticle(title, author, content, isFake);
+        addArticle(title, author, content, isFake); // add new article
         
         // clear the input after adding the article
         jTextField7.setText("");
