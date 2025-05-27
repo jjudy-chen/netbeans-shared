@@ -744,14 +744,12 @@ private int next = 0;
             writer.write("COVID-19 Was Man-Made in a Lab_Sarah Smith_Many conspiracy theorists argue that..._false\n");
             writer.write("10 Ways Social Media is Destroying Our Kids_Jane Johnson_While social media has its advantages..._true\n");
             
-            writer.flush();
-            loadArticles();
             jTextField5.setText("Articles reset to default.");
 
         } catch (IOException e) {
             jTextField5.setText("Error resetting articles: " + e);
         }
-
+        loadArticles();
     }//GEN-LAST:event_resetArticlesActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
