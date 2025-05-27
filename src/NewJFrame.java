@@ -641,24 +641,19 @@ private int next = 0;
             // convert the list to an array
             articles = articleList.toArray(new Article[0]);
 
-        
-            if (articles.length >= 3) {
+            // check how many articles are available 
+            if (articles.length >= 3) { // display 'Article 1'
             jCheckBox17.setText(articles[0].getTitle()); // set title to checkbox
             jTextField3.setText(articles[0].getContent()); // set content to the text field
 
+            // display 'Article 2'
             jCheckBox18.setText(articles[1].getTitle()); // set title to checkbox
             jTextField4.setText(articles[1].getContent()); // set content to the text field
             
+            // display 'Article 3'
             jCheckBox19.setText(articles[2].getTitle()); // set title to checkbox
             jTextField6.setText(articles[2].getContent()); // set content to the text field
             
-            } else if (articles.length == 2) {
-            
-                jCheckBox17.setText(articles[0].getTitle());
-                jTextField3.setText(articles[0].getContent());
-                
-                jCheckBox18.setText(articles[1].getTitle());
-                jTextField4.setText(articles[1].getContent());
             }
         
         } catch (IOException e) {
